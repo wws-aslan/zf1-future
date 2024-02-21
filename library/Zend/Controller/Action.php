@@ -43,6 +43,16 @@ require_once 'Zend/Controller/Front.php';
 abstract class Zend_Controller_Action implements Zend_Controller_Action_Interface
 {
     /**
+     * @var array
+     */
+    public $ajaxable;
+
+    /**
+     * @var null|Zend_Controller_Action_Helper_AjaxContext
+     */
+    protected $ajaxContext;
+
+    /**
      * @var array of existing class methods
      */
     protected $_classMethods;
@@ -93,10 +103,10 @@ abstract class Zend_Controller_Action implements Zend_Controller_Action_Interfac
 
     /**
      * Compatibility for php 8.2 to stop error Deprecated: Creation of dynamic property
-     * @var object 
+     * @var object
      */
-    public  $contexts = null; 
-    
+    public  $contexts = null;
+
     /**
      * Helper Broker to assist in routing help requests to the proper object
      *
