@@ -45,7 +45,7 @@ abstract class Zend_Controller_Action implements Zend_Controller_Action_Interfac
     /**
      * @var array
      */
-    public $ajaxable;
+    public $ajaxable = [];
 
     /**
      * @var null|Zend_Controller_Action_Helper_AjaxContext
